@@ -1,0 +1,118 @@
+body {
+  background-color: #06080c;
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.container {
+  width: 100%;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.alert-icon {
+  margin-right: 10px;
+  color: red;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.errors {
+  background-color: #0f1318;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+}
+.loading {
+  background-color: #0f1318;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  color: rgb(0, 255, 13);
+}
+
+.refresh-button {
+  background-color: #eb0237;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.refresh-button:hover {
+  opacity: 0.8;
+}
+
+.matches {
+  margin-top: 20px;
+}
+
+.match-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b0e12;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+}
+
+.team-logo {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.app-score-status {
+  width: 5%;
+}
+
+.score-status {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.score {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.status {
+  display: block;
+  padding: auto;
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+}
+.status-dot {
+  font-size: 70%;
+}
