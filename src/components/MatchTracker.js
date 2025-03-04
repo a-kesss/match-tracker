@@ -20,7 +20,6 @@ const MatchTracker = () => {
         throw new Error(`Ошибка: ${response.statusText}`);
       }
       const data = await response.json();
-      console.log(data.data.matches);
       setMatches(data.data.matches);
     } catch (err) {
       setError('Ошибка: не удалось загрузить информацию');
