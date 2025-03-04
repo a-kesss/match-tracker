@@ -8,6 +8,7 @@ const MatchTracker = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  //Запрос на API
   const fetchMatches = async () => {
     setLoading(true);
     setError(null);
@@ -28,11 +29,12 @@ const MatchTracker = () => {
       setLoading(false);
     }
   };
-
   useEffect(() => {
     fetchMatches();
   }, []);
 
+  //Можно было компактнее сделать но я чуть торопился, позже думаю доделаю
+  //Установка цвета в зависимости от статуса матча
   const getStatusColor = (status) => {
     switch (status) {
       case 'Scheduled':
@@ -45,7 +47,7 @@ const MatchTracker = () => {
         return 'gray';
     }
   };
-
+  //Установка другого более понятного наименования статуса (необходимости не было, просто подумал так будет красивее)
   const getStatus = (status) => {
     switch (status) {
       case 'Scheduled':
@@ -54,8 +56,6 @@ const MatchTracker = () => {
         return 'Finished';
       case 'Ongoing':
         return 'Live';
-      default:
-        return 'gray';
     }
   };
 
@@ -75,19 +75,18 @@ const MatchTracker = () => {
           </button>
         </div>
       </header>
-
       <div className="matches">
         {matches.map((match, index) => (
           <div className="match-row" key={index}>
             <div className="team left-team">
               <img
+                //Логотипа нет в запросе но я подумал всё же добавить условный рендринг
                 src={match.homeTeam.logo ? match.homeTeam.logo : icon}
                 alt={match.homeTeam.name}
                 className="team-logo"
               />
               <span className="team-name">{match.homeTeam.name}</span>
             </div>
-
             <div className="app-score-status">
               <div className="score-status">
                 <span className="score">
@@ -101,10 +100,11 @@ const MatchTracker = () => {
                 </div>
               </div>
             </div>
-
             <div className="team right-team">
               <span className="team-name">{match.awayTeam.name}</span>
+
               <img
+                //Логотипа нет в запросе но я подумал всё же добавить условный рендринг
                 src={match.homeTeam.logo ? match.homeTeam.logo : icon}
                 alt={match.awayTeam.name}
                 className="team-logo"
