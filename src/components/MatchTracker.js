@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './styles/styles.css';
-import icon from './assets/icon.png';
+import '../styles/styles.css';
+import icon from '../assets/icon.png';
 import { FiAlertTriangle } from 'react-icons/fi';
 
 const MatchTracker = () => {
@@ -19,6 +19,7 @@ const MatchTracker = () => {
         throw new Error(`Ошибка: ${response.statusText}`);
       }
       const data = await response.json();
+      console.log(data.data.matches);
       setMatches(data.data.matches);
     } catch (err) {
       setError('Ошибка: не удалось загрузить информацию');

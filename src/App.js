@@ -1,5 +1,5 @@
 import React from 'react';
-import MatchTracker from './MatchTracker';
+import MatchTracker from './components/MatchTracker';
 import './styles/styles.css';
 
 function App() {
